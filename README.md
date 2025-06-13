@@ -3,13 +3,13 @@
 This repository contains the code and resources for the paper:
 
 📄 **"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**  
-Authors: Shirmohammad Tavangari, Pooria Vadaee, Reza Taheri  
-Affiliations: UBC, Polytechnic of Turin, University of Duisburg-Essen  
-[arXiv preprint link – coming soon]
+Author: Shirmohammad Tavangari  
+Affiliations: University of British Columbia
+[5th International Conference on Electrical,Computer,Communications and Mechatronics Engineering (ICECCME), Istanbul Topkapi University, Oct 2025]
 
 ---
 
-## 🧠 Overview
+##  Overview
 
 This project introduces **Hybrid Instruction Tuning (HITF)**, a method for improving zero-shot reasoning in large language models (LLMs) using:
 - Dynamic example selection (via a learned selector)
@@ -20,7 +20,7 @@ It supports both **fine-tuning** and **prompt-only inference** with OpenAI model
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```bash
 HITF-zero-shot/
@@ -35,7 +35,7 @@ HITF-zero-shot/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ```bash
 pip install -r requirements.txt
@@ -51,15 +51,15 @@ Dependencies include:
 
 ---
 
-## 🚀 Usage
+##  Usage
 
-### 🔸 1. Evaluate with prompt file
+###  1. Evaluate with prompt file
 
 ```bash
 python src/evaluate.py --prompt_file prompts/example_prompts.txt --model gpt-3.5 --api
 ```
 
-### 🔸 2. Run training / marginalization-based prompt generation
+###  2. Run training / marginalization-based prompt generation
 
 ```bash
 python src/train.py --data data/sample_superglue.json --model gpt-4 --api
@@ -69,7 +69,7 @@ python src/train.py --data data/sample_superglue.json --model gpt-4 --api
 
 ---
 
-## 📊 Evaluation Metrics
+##  Evaluation Metrics
 
 | Metric | Description |
 |--------|-------------|
@@ -82,7 +82,7 @@ python src/train.py --data data/sample_superglue.json --model gpt-4 --api
 
 ---
 
-## 🔁 Reproducibility
+##  Reproducibility
 
 - Random seed = `42`
 - Results averaged over 3 runs
@@ -91,14 +91,14 @@ python src/train.py --data data/sample_superglue.json --model gpt-4 --api
 
 ---
 
-## 📄 License
+##  License
 
 This repository is released under the MIT License.
 
 ---
 
-## 📬 Contact
+##  Contact
 
 Questions, feedback or collaboration inquiries?  
 Feel free to reach out:  
-📧 `shirmohammad.tavangari [at] gmail.com`
+📧 `s.tavangari@alumni.ubc.ca`
