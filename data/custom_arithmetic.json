@@ -1,0 +1,24 @@
+[
+  {
+    "question": "If a bag contains 3 red balls and 5 blue balls, what's the probability of picking a red ball?",
+    "answer": "3/8",
+    "source": "human",
+    "embedding": [
+      0.41,
+      0.52,
+      0.13,
+      0.99
+    ]
+  },
+  {
+    "question": "What is the result of (15 + 3) \u00d7 2?",
+    "answer": "36",
+    "source": "self",
+    "embedding": [
+      0.28,
+      0.45,
+      0.31,
+      0.73
+    ]
+  }
+]

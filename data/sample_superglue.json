@@ -1,0 +1,24 @@
+[
+  {
+    "question": "If Alex is older than Bob, and Bob is older than Cindy, who is the oldest?",
+    "answer": "Alex",
+    "source": "human",
+    "embedding": [
+      0.12,
+      0.54,
+      0.23,
+      0.91
+    ]
+  },
+  {
+    "question": "The trophy doesn't fit into the suitcase because it's too big. What is too big?",
+    "answer": "The trophy",
+    "source": "self",
+    "embedding": [
+      0.33,
+      0.25,
+      0.76,
+      0.42
+    ]
+  }
+]
