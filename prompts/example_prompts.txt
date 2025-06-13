@@ -1,0 +1,14 @@
+Q: What is the capital of Germany?
+A: Berlin
+
+Q: What is 12 times 13?
+A: 156
+
+Q: Who wrote the novel '1984'?
+A: George Orwell
+
+Q: If you have 3 apples and you eat 1, how many do you have left?
+A: 2
+
+Q: What is the square root of 144?
+A: 12
