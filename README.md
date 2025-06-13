@@ -2,7 +2,7 @@
 
 This repository contains the code and resources for the paper:
 
-📄 **"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**  
+ **"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**  
 Author: Shirmohammad Tavangari  
 Affiliations: University of British Columbia
 [5th International Conference on Electrical,Computer,Communications and Mechatronics Engineering (ICECCME), Istanbul Topkapi University, Oct 2025]
