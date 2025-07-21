@@ -2,7 +2,9 @@
 
 This repository contains the code and resources for the paper:
 
- **"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**  
+ **"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"** 
+    
+  My paper has been accepted at an IEEE conference!
 
 ---
 
