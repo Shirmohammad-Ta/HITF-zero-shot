@@ -1,11 +1,12 @@
 # Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models
 
 This repository contains the code and resources for the paper:
-
- **"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"** 
+ 
+ ## 🔬 Paper Reference
+ **Title:"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**
+ **Author:** Shirmohammad Tavangari
+ **My paper has been accepted at an IEEE conference!**
     
-  My paper has been accepted at an IEEE conference!
-
 ---
 
 ##  Overview
