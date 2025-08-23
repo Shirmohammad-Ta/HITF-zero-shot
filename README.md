@@ -1,7 +1,7 @@
 # Hybrid Instruction Tuning Framework (HITF) for Zero-Shot Reasoning
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![academia](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://www.academia.edu/143573481/Hybrid_Instruction_Tuning_with_Marginalization_for_Zero_Shot_Reasoning_in_Language_Models)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 Official implementation of the paper:  
@@ -91,7 +91,7 @@ Our method outperforms strong baselines across multiple metrics:
 
 ---
 
-## 🗂️ Repository Structure 📜 License
+##  📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 📧 Contact
