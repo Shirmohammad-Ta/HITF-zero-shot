@@ -94,5 +94,8 @@ Our method outperforms strong baselines across multiple metrics:
 ##  📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-📧 Contact
-For questions and discussions, please open an issue or contact Shirmohammad Tavangari.
+
+## 📞 Contact
+- **Author:** Shirmohammad Tavangari  
+- **Email:** s.tavangari@alumni.ubc.ca  
+- **Institution:** University of British Columbia, Canada  
