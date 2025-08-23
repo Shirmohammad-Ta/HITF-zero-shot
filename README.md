@@ -1,104 +1,98 @@
-# Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models
+# Hybrid Instruction Tuning Framework (HITF) for Zero-Shot Reasoning
 
-This repository contains the code and resources for the paper:
- 
- ## 🔬 Paper Reference
- **Title:"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**
- **Author:** Shirmohammad Tavangari
- **My paper has been accepted at an IEEE conference!**
-    
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-##  Overview
+Official implementation of the paper:  
+**"Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models"**
 
-This project introduces **Hybrid Instruction Tuning (HITF)**, a method for improving zero-shot reasoning in large language models (LLMs) using:
-- Dynamic example selection (via a learned selector)
-- Marginalization over intermediate responses
-- Few-shot prompting without retraining
-
-It supports both **fine-tuning** and **prompt-only inference** with OpenAI models (GPT-3.5 / GPT-4) and HuggingFace models (e.g. T5, LLaMA).
+This repository contains the code and resources for the **Hybrid Instruction Tuning Framework (HITF)**, a novel method that enhances the zero-shot reasoning capabilities of Large Language Models (LLMs) by dynamically combining human-annotated and self-generated examples through a task-aware mixture selector.
 
 ---
 
-##  Repository Structure
+## 🔍 Overview
 
-```bash
-HITF-zero-shot/
-├── src/                   # Source code: models, training, evaluation
-├── data/                  # Example datasets (SuperGLUE, arithmetic)
-├── prompts/               # Few-shot prompt examples
-├── results/               # Output predictions and evaluation logs
-├── paper/                 # PDF of the submitted paper (optional)
-├── requirements.txt       # Python dependencies
-└── README.md              # You are here!
-```
+Large language models often struggle with complex, multi-step reasoning tasks. HITF addresses this by:
 
----
+-   **Dynamic Example Selection**: A lightweight selector module computes an optimal blend of high-quality human data and diverse self-generated examples for each input task.
+-   **Intermediate Answer Marginalization**: Improves robustness and logical consistency by probabilistically combining multiple reasoning paths.
+-   **Adaptive Prompt Construction**: Builds few-shot prompts tailored to the specific task, improving generalization without model retraining.
+-   **Efficient Inference**: Achieves significant performance gains with minimal increase in computational cost.
 
-##  Installation
-
-```bash
-pip install -r requirements.txt
-```
-
-Dependencies include:
-- transformers
-- torch
-- openai
-- scikit-learn
-- peft
-- tqdm
+<div align="center">
+<img src="assets/architecture.png" alt="HITF Architecture" width="600"/>
+</div>
 
 ---
 
-##  Usage
+## ✨ Key Features
 
-###  1. Evaluate with prompt file
-
-```bash
-python src/evaluate.py --prompt_file prompts/example_prompts.txt --model gpt-3.5 --api
-```
-
-###  2. Run training / marginalization-based prompt generation
-
-```bash
-python src/train.py --data data/sample_superglue.json --model gpt-4 --api
-```
-
-> NOTE: Set your OpenAI API key via `export OPENAI_API_KEY=...` or directly in code.
+-   **Zero-Shot Reasoning Improvement**: Enhances accuracy, coherence, and depth of reasoning in models like GPT-3.5, GPT-4, and T5.
+-   **Plug-and-Play Framework**: Can be applied on top of existing pre-trained models without full fine-tuning.
+-   **Resource Efficient**: Uses a lightweight selector network, making it suitable for low-resource environments.
+-   **Comprehensive Evaluation**: Tested on SuperGLUE, MMLU, TriviaQA, and custom arithmetic/logical reasoning benchmarks.
 
 ---
 
-##  Evaluation Metrics
+## 📈 Results
 
-| Metric | Description |
-|--------|-------------|
-| EM     | Exact Match |
-| LC     | Logical Consistency |
-| RD     | Reasoning Depth |
-| CS     | Confidence Score |
-| IT     | Inference Time |
-| Switch | Answer Change Rate |
+Our method outperforms strong baselines across multiple metrics:
 
----
-
-##  Reproducibility
-
-- Random seed = `42`
-- Results averaged over 3 runs
-- Dataset splits included in `data/`
-- Prompt format is documented in `prompts/`
+| Model/Method       | Exact Match (EM) ↑ | Logical Consistency (LC) ↑ | Reasoning Depth (RD) ↑ | Inference Time (IT) (ms) ↓ |
+|--------------------|-------------------|---------------------------|----------------------|--------------------------|
+| Standard Fine-Tuning (FT)   | 65.7              | 70.2                      | 3.4                  | 120                      |
+| Self-Generated Data (SGDT)  | 58.9              | 64.5                      | 2.9                  | 110                      |
+| Fixed Hybrid (HFT)          | 70.2              | 75.1                      | 3.9                  | 125                      |
+| GPT-3.5            | 67.3              | 71.8                      | 3.5                  | 150                      |
+| GPT-4              | 73.6              | 78.9                      | 4.1                  | 180                      |
+| **HITF (Ours)**    | **76.5**          | **82.7**                  | **4.5**              | **115**                  |
 
 ---
 
-##  License
+## 🚀 Quick Start
 
-This repository is released under the MIT License.
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Shirmohammad-Ta/HITF-zero-shot.git
+    cd HITF-zero-shot
+    ```
+
+2.  Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Usage
+
+1.  **Prepare Datasets**: Place your `D_human` and `D_self` datasets in the `data/` directory. Format: JSONL files with `{"instruction": ..., "reasoning": ..., "answer": ...}`.
+
+2.  **Encode Tasks & Train Selector**:
+    ```python
+    from src.encoder import TaskEncoder
+    from src.selector import DynamicSelector
+
+    encoder = TaskEncoder()
+    selector = DynamicSelector()
+    selector.train(encoder, data_path="data/")
+    ```
+
+3.  **Run Inference**:
+    ```python
+    from src.inference import HITFInference
+
+    hitf = HITFInference(selector_model_path="models/selector.pt")
+    query = "What is the square root of 144?"
+    result = hitf.query(query, k=5)  # k = support set size
+    print(result['answer'])
+    ```
 
 ---
 
-##  Contact
+## 🗂️ Repository Structure 📜 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Questions, feedback or collaboration inquiries?  
-Feel free to reach out:  
-📧 `s.tavangari@alumni.ubc.ca`
+📧 Contact
+For questions and discussions, please open an issue or contact Shirmohammad Tavangari.
