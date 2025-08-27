@@ -98,4 +98,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Contact
 - **Author:** Shirmohammad Tavangari  
 - **Email:** s.tavangari@alumni.ubc.ca  
-- **Institution:** University of British Columbia, Canada  
+- **Institution:** University of British Columbia, Canada
+- **Here is the link to the paper:** [Hybrid Instruction Tuning with Marginalization for Zero-Shot Reasoning in Language Models (Academia.edu)](https://www.academia.edu/143573481/Hybrid_Instruction_Tuning_with_Marginalization_for_Zero_Shot_Reasoning_in_Language_Models)
+
